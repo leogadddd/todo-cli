@@ -17,29 +17,38 @@ This is a simple Todo application written in Go. It provides functionality to st
 
 ## Usage
 
-1. Create a new storage instance:
+1. Clone the Repository
 
-   ```go
-   storage := NewStorage[YourType]("filename.json")
+   ```bash
+   git clone https://github.com/your-username/go-todo-app.git
+   cd go-todo-app
+   Build the Application
    ```
 
-2. Save data:
+2. Make sure you have Go installed (version 1.18 or later). Then run:
 
-   ```go
-   err := storage.Save(yourData)
-   if err != nil {
-       log.Fatal(err)
-   }
+   ```bash
+   go build -o todo
    ```
 
-3. Load data:
-   ```go
-   var yourData YourType
-   err := storage.Load(&yourData)
-   if err != nil {
-       log.Fatal(err)
-   }
+   This will create an executable named todo in the current directory.
+
+3. Run the Application
+
+   You can now use the todo executable to interact with the app. Below are some basic usage examples (depending on how your command.go is set up):
+
+   ```bash
+   ./todo add "Buy groceries"
+   ./todo list
+   ./todo complete 1
+   ./todo delete 1
    ```
+
+   Replace the commands above with the actual ones implemented in your command.go. If you're not sure yet, this is a placeholder for how your CLI might look.
+
+4. Data Storage
+
+   Todos are saved to a local JSON file (e.g., todos.json) using the generic storage system. This makes it easy to persist your data across sessions.
 
 ## Requirements
 
